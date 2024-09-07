@@ -78,9 +78,14 @@ export const getDoctorProfile = async(req , res) =>{
       return res.status(404).json({success:false, message:"Doctor not found"})
     }
     const {password, ...rest} = doctor._doc;
-    const appointments = await Booking.find({doctor:doctorId})
+    const appointments = await Booking.find({ doctor: doctorId })
+    .populate({
+      path: 'user',
+      select: 'name email gender photo'
+    })
+    .select('ticketPrice isPaid createdAt');
 
-    res.status(200).json({ success: true , message:'Getting profile info', data:{ ...rest},})
+    res.status(200).json({ success: true , message:'Getting profile info', data:{ ...rest,appointments},})
   } catch (err) {
     console.log(err.message)
     res.status(500).json({ success: false, message: "Something went Wrong, cannot get"})

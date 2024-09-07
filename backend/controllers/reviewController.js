@@ -28,7 +28,6 @@ export const createReview = async (req ,res)=>{
         
         await Doctor.findByIdAndUpdate(req.body.doctor , {
             $push:{reviews : savedReview._id}
-
         })
 
         res.status(200).json({ success : true , message : "Review Submitted" , data : savedReview})

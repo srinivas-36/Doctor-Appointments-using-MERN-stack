@@ -34,3 +34,4 @@ bookingSchema.pre(/^find/,function(next){
   next();
 })
 export default mongoose.model("Booking", bookingSchema);
+

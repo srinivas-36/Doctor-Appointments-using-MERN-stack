@@ -35,7 +35,9 @@ const Home = () => {
                     quibusdam culpa saepe eaque velit aut assumenda ut vero
                     corrupti libero temporibus similique numquam!
                   </p>
-                  <button className="btn">Request an Appointment</button>
+                  <Link to="/doctors">
+                    <button className="btn">Request an Appointment</button>
+                  </Link>
                 </div>
 
                 <div className="mt-[30px] lg:mt-[70px] flex flx-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">

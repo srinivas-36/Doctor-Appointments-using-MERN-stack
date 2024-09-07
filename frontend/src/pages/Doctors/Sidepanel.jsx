@@ -18,6 +18,7 @@ const Sidepanel = ({ doctorId, ticketPrice, timeSlots }) => {
       );
 
       const data = response.data;
+
       if (data.session.url) {
         window.location.href = data.session.url;
       }

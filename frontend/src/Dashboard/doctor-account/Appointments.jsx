@@ -4,7 +4,7 @@ const Appointments = ({ appointments }) => {
   return (
     <table className="w-full text-left text-sm text-gray-600">
       <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-        <tr>
+        <tr className="text-center p-3">
           <th scope="col" className="px-6 py-3">
             Name
           </th>
@@ -25,7 +25,7 @@ const Appointments = ({ appointments }) => {
 
       <tbody>
         {appointments?.map((item) => (
-          <tr key={item._id}>
+          <tr key={item._id} className="text-center p-3">
             <th
               scope="row"
               className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap"
@@ -39,7 +39,7 @@ const Appointments = ({ appointments }) => {
                 <div className="text-base font-semibold">{item.user.name}</div>
                 <div className="pl-3">
                   <div className="text-base font-semibold">
-                    {item.user.name}
+                    {/* {item.user.name} */}
                   </div>
                   <div className="txet-normal text-gary-500">
                     {item.user.email}
